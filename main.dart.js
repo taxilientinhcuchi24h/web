@@ -54440,7 +54440,7 @@ A.Gy.prototype={
 O(a,b){var s=null
 return A.MK(A.a4P(B.au,new A.nf(A.ajZ(s,s,new A.mu("assets/images/4.png",s,s)),s,s,s,B.e5,s,!1,s),B.C,s,1,s,B.dV,s,B.di),s,s)}}
 A.Bs.prototype={
-O(a,b){return new A.t7(new A.rt(null),new A.Sj(),"Flutter Demo",A.a9V(null,B.eI),null)}}
+O(a,b){return new A.t7(new A.rt(null),new A.Sj(),"Taxi li\xean t\u1ec9nh C\u1ee7 Chi 24/24",A.a9V(null,B.eI),null)}}
 A.Sj.prototype={
 $2(a,b){var s=null
 b.toString
