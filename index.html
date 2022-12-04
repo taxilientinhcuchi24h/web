@@ -46,6 +46,9 @@
             var txtThoigian = document.getElementById("txtThoigian");
             txtThoigian.valueAsDate = new Date();
         }
+        function sendMail() {
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + email)
+        }
     </script>
 </head>
 
@@ -58,7 +61,7 @@
                             style="font-size:21px; color:#ffffff; padding-right:10px"></i>Trang chủ</a>
                 </th>
                 <th style="width: 60%; text-align: right; vertical-align:middle">
-                    <a href="mailto:nguyenthibachtuyet066@gmail.com" class="linkHeader" style="padding-bottom:5px"><i
+                    <a onclick="sendMail(); return false;" class="linkHeader" style="padding-bottom:5px"><i
                             class="fa fa-envelope" style="font-size:17px; color:#ffffff"></i></a>
                     <span style="padding-right:10px"></span>
                     <a href="tel:0961269997" class="linkHeader" style="padding-bottom:5px"><i class="fa fa-phone"
@@ -444,7 +447,7 @@
                             style="text-decoration:none; font-weight:bold; color:#ffffff">096.126.9997</a></p>
                     <p class="labelStyle"
                         style="text-align: justify; text-align-last:left; font-size: 14px; color: #ffffff; font-weight: normal">
-                        Email: <a href="mailto:nguyenthibachtuyet066@gmail.com"
+                        Email: <a onclick="sendMail(); return false;"
                             style="text-decoration: none; font-weight: bold; color: #ffffff">nguyenthibachtuyet066@gmail.com</a>
                     </p>
                 </th>
