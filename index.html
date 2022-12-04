@@ -2,106 +2,479 @@
 <html>
 
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/web/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Taxi Website.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="web">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <title>web</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="utf-8" />
+    <title>Dịch Vụ Taxi TAXICUCHIGIARE</title>
+    <meta name="description"
+        content="Taxi chuyên nghiệp, giá rẻ, xe hợp đồng, chuyên chở khách sân bay, bệnh viện, về quê, du lịch, đám tiệc khu vực Củ Chi, Tây Ninh, Hồ Chí Minh">
+    <meta name="keywords"
+        content="Taxi, HCM, taxi, taxi hcm gia re, taxihcmgiare, taxi hcm giare, xe dich vu, thue xe, tp ho chi minh, hcm, xe taxi, goi taxi, taxi gia re">
+    <meta name="author" content="Tubopxp">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles/taxi.css" />
+    <link rel="stylesheet" href="styles/callbutton.css" />
+    <link rel="stylesheet" href="styles/zalobutton.css" />
+    <link rel="stylesheet" href="styles/facebookbutton.css" />
+    <script>
+        var email = 'nguyenphuc2830@gmail.com';
+        function DangKyDichVu() {
+            var txtPhone = document.getElementById("txtSodienthoai");
+            var validSDT = document.getElementById("validSodienthoai");
+            var txtDiemdon = document.getElementById("txtDiemdon");
+            var txtDiemden = document.getElementById("txtDiemden");
+            var txtThoigian = document.getElementById("txtThoigian");
+            var txtChuthich = document.getElementById("txtChuthich");
+            if (txtPhone.value != "" && txtPhone.value.length > 5) {
+                validSDT.style.display = "none";
+                var subject = "ĐĂNG KÝ DỊCH VỤ LIÊN TỈNH";
+                var body = 'SĐT Khách hàng:   ' + txtPhone.value;
+                body += '%0D%0A%0D%0AĐiểm đón:   ' + txtDiemdon.value;
+                body += '%0D%0A%0D%0AĐiểm đến:   ' + txtDiemden.value;
+                body += '%0D%0A%0D%0AThời gian:   ' + txtThoigian.value;
+                body += '%0D%0A%0D%0AChú thích:   ' + txtChuthich.value;
+                window.open('mailto:' + email + '?subject=' + subject + '&body=' + body);
+                alert('Yêu cầu của bạn đang được xử lý. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất. Cảm ơn bạn đã tin tưởng sử dụng dịch vụ của chúng tôi!')
+            }
+            else {
+                validSDT.style.display = "block";
+            }
+        }
+        window.onload = function () {
+            var txtThoigian = document.getElementById("txtThoigian");
+            txtThoigian.valueAsDate = new Date();
+        }
+    </script>
 </head>
 
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    var serviceWorkerVersion = '4267613227';
-    var scriptLoaded = false;
-    function loadMainDartJs() {
-      if (scriptLoaded) {
-        return;
-      }
-      scriptLoaded = true;
-      var scriptTag = document.createElement('script');
-      scriptTag.src = 'main.dart.js';
-      scriptTag.type = 'application/javascript';
-      document.body.append(scriptTag);
-    }
+    <div class="divHeader" style="top:0">
+        <table>
+            <tr>
+                <th style="width: 40%; text-align: left; vertical-align: middle">
+                    <a href="/" class="linkHeader" style="padding-bottom:5px"><i class="fa fa-home"
+                            style="font-size:21px; color:#ffffff; padding-right:10px"></i>Trang chủ</a>
+                </th>
+                <th style="width: 60%; text-align: right; vertical-align:middle">
+                    <a href="mailto:nguyenphuc2830@gmail.com" class="linkHeader" style="padding-bottom:5px"><i
+                            class="fa fa-envelope" style="font-size:17px; color:#ffffff"></i></a>
+                    <span style="padding-right:10px"></span>
+                    <a href="tel:0961269997" class="linkHeader" style="padding-bottom:5px"><i class="fa fa-phone"
+                            style="font-size:17px; padding-right:10px; color:#ffffff"></i>096.126.9997</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div
+        style="width: 100%; padding: 5px; box-sizing: border-box; text-align: center; align-items: center; background-color: #E8FFE9; border-bottom:1px solid #eaeaea">
+        <div class="menu-item labelStyle" onclick="window.location.href = '#divGioiThieu';">Giới Thiệu</div>
+        <div class="menu-item labelStyle" onclick="window.location.href = '#divBanggia';">Bảng Giá</div>
+        <div class="menu-item labelStyle" onclick="window.location.href = '#divThueXe';">Thuê Xe</div>
+        <div class="menu-item labelStyle" onclick="window.location.href = '#divKhuVuc';">Khu Vực</div>
+        <div class="menu-item labelStyle" onclick="window.location.href = '#divDichVu';">Dịch Vụ</div>
+    </div>
+    <div class="divContent">
+        <table>
+            <tr>
+                <th class="thContact">
+                    <h3 id="divThueXe" class="labelStyle" style="font-size: 18px; color: #0c9f15"><b>THUÊ XE MỘT CÁCH
+                            NHANH CHÓNG</b></h3>
+                    <div style="width:max-content; margin:20px auto 15px auto">
+                        <a href="tel:0961269997"><img src="images/hotline.gif"
+                                style="width:250px; text-align-last:center; cursor:pointer" /></a>
+                    </div>
+                    <div id="divcontact" class="div-contact" style="text-align:center;">
+                        <h3 class="labelStyle" style="font-size: 18px; color: #ffffff"><b>ĐẶT XE ONLINE NHANH</b></h3>
+                        <div style="margin-bottom:5px"></div>
+                        <input type="text" id="txtSodienthoai" placeholder="Số điện thoại"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                        <label id="validSodienthoai" style="color:#ffffff; display:none">Vui lòng nhập chính xác số điện
+                            thoại!</label>
+                        <div style="margin-bottom:10px"></div>
+                        <input type="text" id="txtDiemdon" placeholder="Điểm đón" />
+                        <div style="margin-bottom:10px"></div>
+                        <input type="text" id="txtDiemden" placeholder="Điểm đến" />
+                        <div style="margin-bottom:10px"></div>
+                        <input type="date" id="txtThoigian" placeholder="Thời gian">
+                        <div style="margin-bottom:10px"></div>
+                        <input type="text" id="txtChuthich" placeholder="Khách chú thích" />
+                        <div style="margin-bottom:10px"></div>
+                        <div style="width:max-content; margin:auto">
+                            <div id="btnBooking2" class="button-hotline labelStyle"
+                                style="border:none; padding:10px 20px 10px 20px; box-sizing:border-box; font-weight:bold"
+                                onclick="DangKyDichVu(); return false;">ĐẶT XE TRỰC TUYẾN</div>
+                        </div>
+                    </div>
+                </th>
+                <th class="thContact">
+                    <h3 id="divGioiThieu" class="labelStyle"
+                        style="font-size: 18px; color: #0c9f15; text-align-last: left;"><b>GIỚI THIỆU VỀ
+                            TAXICUCHIGIARE</b></h3>
+                    <div style="width:80%; margin:auto; text-align:center">
+                        <img src="images/car1.png" style="width:100%;" alt="taxi" />
+                    </div>
+                    <div class="labelStyle"
+                        style="width: 100%; color: #000000; text-align-last: left; text-indent: 1.5em; margin-bottom:10px">
+                        <span><b>TAXICUCHIGIARE</b> là một website đặt xe trực tuyến – Cho thuê xe taxi, phục vụ 24/7,
+                            chuyên cung cấp dịch vụ xe taxi sân bay, taxi đường dài trọn gói giá rẻ (bao phí cao tốc).
+                            <b>TAXICUCHIGIARE</b> là một trong những thương hiệu hàng đầu về lĩnh vực taxi gia đình,
+                            taxi
+                            giá rẻ. Dịch vụ <b>TAXICUCHIGIARE</b> là loại xe 7 chỗ văn phòng, đời mới, phong cách lịch
+                            sự,
+                            săn sàng phục vụ đưa đón quý khách mọi lúc. Với kinh nghiệm lái xe lâu năm của chúng tôi,
+                            <b>TAXICUCHIGIARE</b> cam kết mang đến sự an toàn, thoải mái và chất lượng phục vụ tốt
+                            nhất.</span>
+                    </div>
+                    <div class="labelStyle"
+                        style="width: 100%; color: #000000; text-align-last: left; text-indent: 1.5em; margin-bottom: 10px">
+                        <span><b>TAXICUCHIGIARE</b> luôn đặt mục tiêu sự an toàn và hài lòng của khách hàng là mục tiêu
+                            cao nhất mà chúng tôi muốn đem lại cho khách hàng. Quý khách cần thuê xe đi các tỉnh du
+                            lịch, đi công tác xa, thuê xe đi tour. Dịch vụ cho thuê xe có tài xế của chúng tôi đều có
+                            thể đáp ứng đúng theo nhu cầu của khách hàng.</span>
+                    </div>
+                    <div style="width:max-content; margin:20px auto 15px auto">
+                        <a href="tel:0961269997"><img src="images/hotline.gif"
+                                style="width:250px; text-align-last:center; cursor:pointer" /></a>
+                    </div>
+                    <div class="labelStyle"
+                        style="width: 100%; color: red; text-align-last: left; text-indent: 1.5em; ">
+                        <span><i><b>Lưu ý:</b> Chúng tôi chỉ cho thuê xe có tài xế, không cho thuê xe tự lái.</i></span>
+                    </div>
+                    <div class="labelStyle"
+                        style="width: 100%; color: red; text-align-last: left; text-indent: 1.5em; margin-bottom: 15px">
+                        <span><b>Chung tay dập tắt đại dịch COVID-19:</b> Để bảo vệ sức khoẻ của khách hàng và cộng
+                            đồng, kiến nghị quý khách tuân thủ các quy định về phòng chống lây lan dịch Covid-19 hiệu
+                            quả, bên cạnh đó chúng tôi áp dụng nghiêm ngặt các biện pháp khử khuẩn cho các phương tiện,
+                            bến bãi để đảm bảo phục vụ quý khách một cách an toàn nhất.</span>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </div>
 
-    if ('serviceWorker' in navigator) {
-      // Service workers are supported. Use them.
-      window.addEventListener('load', function () {
-        // Wait for registration to finish before dropping the <script> tag.
-        // Otherwise, the browser will load the script multiple times,
-        // potentially different versions.
-        var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
-        navigator.serviceWorker.register(serviceWorkerUrl)
-          .then((reg) => {
-            function waitForActivation(serviceWorker) {
-              serviceWorker.addEventListener('statechange', () => {
-                if (serviceWorker.state == 'activated') {
-                  console.log('Installed new service worker.');
-                  loadMainDartJs();
-                }
-              });
-            }
-            if (!reg.active && (reg.installing || reg.waiting)) {
-              // No active web worker and we have installed or are installing
-              // one for the first time. Simply wait for it to activate.
-              waitForActivation(reg.installing || reg.waiting);
-            } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
-              // When the app updates the serviceWorkerVersion changes, so we
-              // need to ask the service worker to update.
-              console.log('New service worker available.');
-              reg.update();
-              waitForActivation(reg.installing);
-            } else {
-              // Existing service worker is still good.
-              console.log('Loading app from service worker.');
-              loadMainDartJs();
-            }
-          });
+    <div class="divService">
+        <h3 id="divKhuVuc" class="labelStyle" style="font-size: 18px; color: #0c9f15; text-align-last: center"><b>CHÚNG
+                TÔI HOẠT ĐỘNG Ở NHỮNG NƠI ĐÂU?</b></h3>
+        <div class="labelStyle"
+            style="width: 100%; color: #000000; text-align-last: center; text-indent: 1.5em; margin-bottom:10px">
+            <span><b>TAXICUCHIGIARE</b> là một website đặt xe trực tuyến – Cho thuê xe taxi, phục vụ 24/7, chuyên cung
+                cấp
+                dịch vụ xe taxi sân bay, taxi đường dài trọn gói giá rẻ (bao phí cao tốc). <b>TAXICUCHIGIARE</b> là một
+                trong những thương hiệu hàng đầu về lĩnh vực taxi gia đình, taxi giá rẻ. Dịch vụ <b>TAXICUCHIGIARE</b>
+                là
+                loại xe 7 chỗ văn phòng, đời mới, phong cách lịch sự, săn sàng phục vụ đưa đón quý khách mọi lúc. Với
+                kinh nghiệm lái xe lâu năm của chúng tôi, <b>TAXICUCHIGIARE</b> cam kết mang đến sự an toàn, thoải mái
+                và
+                chất lượng phục vụ tốt nhất.</span>
+        </div>
+        <div class="services-grid">
+            <div class="service service1">
+                <img src="images/tphcm.jpeg" style="width:100%" />
+                <h4 class="labelStyle">Sài Gòn - Liên Tỉnh</h4>
+                <p class="labelStyle" style="color:#808080">Bạn muốn gọi xe, thuê xe để đi chơi, du lịch, đi công tác
+                    xa,.... từ Sài Gòn tới các tỉnh khác một cách nhanh chóng. Vui lòng click vào nút gọi để gọi xe ngay
+                    hoặc nhận báo giá trực tiếp từ chúng tôi!</p>
+                <div style="width:max-content; margin:20px auto 15px auto">
+                    <a href="tel:0961269997"><img src="images/hotline.gif"
+                            style="width:250px; text-align-last:center; cursor:pointer" /></a>
+                </div>
+            </div>
 
-        // If service worker doesn't succeed in a reasonable amount of time,
-        // fallback to plaint <script> tag.
-        setTimeout(() => {
-          if (!scriptLoaded) {
-            console.warn(
-              'Failed to load app from service worker. Falling back to plain <script> tag.',
-            );
-            loadMainDartJs();
-          }
-        }, 4000);
-      });
-    } else {
-      // Service workers not supported. Just drop the <script> tag.
-      loadMainDartJs();
-    }
-  </script>
+            <div class="service service2">
+                <img src="images/vungtau.jpeg" style="width:100%" />
+                <h4 class="labelStyle">Sài Gòn - Vũng Tàu</h4>
+                <p class="labelStyle" style="color:#808080">Bạn muốn gọi xe, thuê xe để đi chơi, du lịch, đi công tác
+                    xa,.... từ Sài Gòn tới Vũng Tàu một cách nhanh chóng. Vui lòng click vào nút gọi để gọi xe ngay hoặc
+                    nhận báo giá trực tiếp từ chúng tôi!</p>
+                <div style="width:max-content; margin:20px auto 15px auto">
+                    <a href="tel:0961269997"><img src="images/hotline.gif"
+                            style="width:250px; text-align-last:center; cursor:pointer" /></a>
+                </div>
+            </div>
+
+            <div class="service service3">
+                <img src="images/mientay.jpeg" style="width:100%" />
+                <h4 class="labelStyle">Sài Gòn - Miền Tây</h4>
+                <p class="labelStyle" style="color:#808080">Bạn muốn gọi xe, thuê xe để đi chơi, du lịch, đi công tác
+                    xa,.... từ Sài Gòn tới các tỉnh Miền Tây một cách nhanh chóng. Vui lòng click vào nút gọi để gọi xe
+                    ngay hoặc nhận báo giá trực tiếp từ chúng tôi!</p>
+                <div style="width:max-content; margin:20px auto 15px auto">
+                    <a href="tel:0961269997"><img src="images/hotline.gif"
+                            style="width:250px; text-align-last:center; cursor:pointer" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divContent">
+        <h3 id="divDichVu" class="labelStyle" style="font-size: 18px; color: #0c9f15; text-align-last:left"><b>DỊCH
+                VỤ</b></h3>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Cung cấp dịch vụ cho thuê xe đưa đón sân bay.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Cung cấp dịch vụ cho thuê xe đưa đón bệnh viện.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Cung cấp dịch vụ cho thuê xe về quê, đi xa, liên tỉnh.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Cung cấp dịch vụ cho thuê xe hợp đồng.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Cung cấp dịch vụ cho thuê xe du lịch, đi tuor.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Cung cấp dịch vụ cho thuê xe cưới, hỏi.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Đưa đón khắp nơi trên khắp mọi miền tổ quốc.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-hand-o-right" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Tư vấn, báo giá miễn phí, ưu đãi cho những khách hàng đặt trước.
+        </div>
+        <div style="width:max-content; margin:20px auto 15px auto">
+            <a href="tel:0961269997"><img src="images/hotline.gif"
+                    style="width:250px; text-align-last:center; cursor:pointer" /></a>
+        </div>
+        <h3 class="labelStyle" style="font-size: 18px; color: #0c9f15; text-align-last:left"><b>CAM KẾT DỊCH VỤ
+                TAXICUCHIGIARE</b></h3>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Về phương diện khách hàng: Bảo đảm đáp ứng nhu cầu thuê xe giá rẻ bất cứ khi nào, bất cứ nơi đâu của khách
+            hàng. Giá cả hợp lý, chất lượng dịch vụ đảm bảo. Tuần thủ quy định về an toàn cho khách hàng, giấy tờ và bảo
+            hiểm đầy đủ, hợp pháp. Luôn nỗ lực và thực hiện cam kết phục vụ quý khách hàng hơn cả mong đợi.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Về phương diện xã hội: Thực hiện xây dựng nếp văn hóa và luôn luôn chấp hành nghiêm chỉnh khi tham gia giao
+            thông.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Không ngừng đầu tư trang thiết bị, phương tiện phục vụ chất lượng, đảm bảo.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Luôn có sẵn xe 24/24: Xe 4/7/16 chỗ. Có cho thuê xe đi bất cứ đâu theo nhu cầu của khách hàng.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Lái xe chuyên nghiệp: Với nhiều năm kinh nghiệm nhiều năm trong lĩnh vực taxi và đội ngũ hàng ngàn
+            đầu xe chúng tôi luôn sẵn sàng phục vụ quý khách 24/24.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Đưa đón khắp miền Nam: Phục vụ đưa đón khách hàng khắp các tỉnh thành khu vực Miền Nam, Việt Nam.
+        </div>
+        <div class="labelStyle" style="width: 100%; color: #000000; text-align-last: left; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Chi phí rẻ: Chúng tôi cam kết chi phí di chuyển rẻ, đáp ứng mọi nhu cầu của khách hàng.
+        </div>
+        <div style="width:max-content; margin:20px auto 15px auto">
+            <a href="tel:0961269997"><img src="images/hotline.gif"
+                    style="width:250px; text-align-last:center; cursor:pointer" /></a>
+        </div>
+    </div>
+    <div id="divBanggia" class="divContent">
+        <h3 class="labelStyle" style="font-size: 18px; color: #0c9f15; text-align-last:left"><b>BẢNG GIÁ XE ĐI TỈNH</b>
+        </h3>
+        <div class="labelStyle"
+            style="width: 100%; color: #000000; text-align-last: left; text-indent: 1.5em; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Bảng giá đã bao gồm tất cả các chi phí cầu đường.
+        </div>
+        <div class="labelStyle"
+            style="width: 100%; color: #000000; text-align-last: left; text-indent: 1.5em; margin-bottom:10px">
+            <i class="fas fa fa-thumbs-up" style="padding-right: 10px; color: #0c9f15; font-size: 18px"></i>
+            Không phát sinh thêm bất cứ chi phí nào khi trải nghiệm dịch vụ của chúng tôi.
+        </div>
+        <div style="margin-bottom:20px"></div>
+        <table class="tableNormal">
+            <tr>
+                <th class="tdNormal" style="background-color:#0c9f15; color:white"><b>Điểm đi - điểm đến</b></th>
+                <th class="tdNormal" style="background-color:#0c9f15; color: white"><b>Giá một chiều</b><br />( có thể
+                    biến động )</th>
+                <th class="tdNormal" style="background-color:#0c9f15; color: white"><b>Giá hai chiều</b><br />( có thể
+                    biến động )</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Vũng Tàu</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,000,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,600,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - Hồ Tràm</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,100,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,700,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - Long Hải</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">900,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,500,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - Bình Châu</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,200,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,800,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Tây Ninh</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">900,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,500,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Mỹ Tho</th>
+                <th class="tdNormal" style="background-color:#bbffb6">700,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,400,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Bến Tre</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">800,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,400,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Vĩnh Long</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,200,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,600,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Trà Vinh</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,200,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,600,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Cần Thơ</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,600,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">2,200,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Vị Thanh, Hậu Giang</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,900,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">2,700,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TX Ngã Bảy, Hậu Giang</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,700,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">2,500,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Sóc Trăng</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,900,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">2,500,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Bạc Liêu</th>
+                <th class="tdNormal" style="background-color:#bbffb6">2,400,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">3,400,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Cà Mau</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">2,900,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">4,100,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Cao Lãnh, Đồng Tháp</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,300,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,800,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Sa Đéc, Đồng Tháp</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,200,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,700,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TX Hồng Ngự, Đồng Tháp</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,500,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">2,100,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Long Xuyên, An Giang</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">1,800,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">2,400,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Châu Đốc, An Giang</th>
+                <th class="tdNormal" style="background-color:#bbffb6">1,900,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">2,500,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#c3f9c7">TP Hồ Chính Minh - TP Rạch Giá, Kiên Giang</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">2,200,000</th>
+                <th class="tdNormal" style="background-color:#c3f9c7">3,200,000</th>
+            </tr>
+            <tr>
+                <th class="tdNormal" style="background-color:#bbffb6">TP Hồ Chính Minh - TP Hà Tiên, Kiên Giang</th>
+                <th class="tdNormal" style="background-color:#bbffb6">2,900,000</th>
+                <th class="tdNormal" style="background-color:#bbffb6">4,100,000</th>
+            </tr>
+        </table>
+        <div style="width:max-content; margin:20px auto 15px auto">
+            <a href="tel:0961269997"><img src="images/hotline.gif"
+                    style="width:250px; text-align-last:center; cursor:pointer" /></a>
+        </div>
+    </div>
+    <div class="divFooter">
+        <table style="width:100%">
+            <tr>
+                <th class="thContact" style="text-align:left; line-height:1.5">
+                    <p class="labelStyle"
+                        style="text-align: justify; text-align-last:left; font-size: 16px; color: #ffffff; font-weight: bold">
+                        GIỚI THIỆU CHUNG</p>
+                    <p class="labelStyle"
+                        style="text-align: justify; text-align-last:left; font-size: 14px; color: #ffffff; font-weight: normal">
+                        Địa chỉ: Xã Nhuận Đức, Huyện Củ Chi, TP Hồ Chí Minh</p>
+                    <p class="labelStyle"
+                        style="text-align: justify; text-align-last:left; font-size: 14px; color: #ffffff; font-weight: normal">
+                        Số điện thoại: <a href="tel:0961269997"
+                            style="text-decoration: none; font-weight: bold; color: #ffffff">096.126.9997</a></p>
+                    <p class="labelStyle"
+                        style="text-align: justify; text-align-last:left; font-size: 14px; color: #ffffff; font-weight: normal">
+                        Hotline: <a href="tel:0961269997"
+                            style="text-decoration:none; font-weight:bold; color:#ffffff">096.126.9997</a></p>
+                    <p class="labelStyle"
+                        style="text-align: justify; text-align-last:left; font-size: 14px; color: #ffffff; font-weight: normal">
+                        Email: <a href="mailto:nguyenphuc2830@gmail.com"
+                            style="text-decoration: none; font-weight: bold; color: #ffffff">nguyenphuc2830@gmail.com</a>
+                    </p>
+                </th>
+                <th class="thContact" style="text-align:right;">
+                    <p class="labelStyle"
+                        style="text-align: justify; text-align-last:right; font-size: 14px; color: #ffffff; font-weight: bold">
+                        © 2022 Copyright TAXICUCHIGIARE.<br /> All Rights Reserved</p>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="log-in_zalo">
+        <a href="https://zalo.me/0362613112" id="popup__toggle_zalo" onclick="return true;">
+            <div class="circlephone_zalo" style="transform-origin: center;"></div>
+            <div class="circle-fill_zalo" style="transform-origin: center;"></div>
+            <div class="img-circle_zalo" style="transform-origin: center;">
+                <div class="img-circleblock_zalo" style="transform-origin: center;"></div>
+            </div>
+        </a>
+    </div>
+    <div class="log-in">
+        <a href="tel:0961269997" id="popup__toggle" onclick="return true;">
+            <div class="circlephone" style="transform-origin: center;"></div>
+            <div class="circle-fill" style="transform-origin: center;"></div>
+            <div class="img-circle" style="transform-origin: center;">
+                <div class="img-circleblock" style="transform-origin: center;"></div>
+            </div>
+        </a>
+    </div>
 </body>
 
 </html>
