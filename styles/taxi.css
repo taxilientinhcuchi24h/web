@@ -1,0 +1,373 @@
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0 !important;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #046E01;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #046E01;
+    }
+
+input[type=text], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    box-sizing: border-box;
+    border: 1px solid #808080;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    opacity: 0.9;
+    color: #000000;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    min-height: 1.3em;
+}
+
+    input[type=text]:focus, input[type=text]:hover, input[type=date]:focus, input[type=date]:hover {
+        border: 1px solid #267F31;
+    }
+
+    input[type=text]::-webkit-input-placeholder, input[type=date]::-webkit-input-placeholder {
+        color: #808080;
+    }
+
+    input[type=text]:-ms-input-placeholder, input[type=date]:-ms-input-placeholder {
+        color: #808080;
+    }
+
+    input[type=text]:-moz-placeholder, input[type=date]:-moz-placeholder {
+        color: #808080;
+    }
+
+    input[type=text]::-moz-placeholder, input[type=date]::-moz-placeholder {
+        color: #808080;
+    }
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+}
+
+th {
+    font-weight: normal;
+}
+
+.thContact {
+    width:50%;
+    display:table-cell;
+    vertical-align:top;
+    padding:5px;
+    box-sizing:border-box;
+}
+
+.divHeader {
+    width: 100%;
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, #05A800 0%, #046E01 100%);
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.linkHeader {
+    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+    .linkHeader:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+        background-position: 0 100%;
+        background-size: auto 6px;
+        background-repeat: repeat-x;
+        text-decoration: none;
+    }
+
+.menu-item {
+    display: inline-flex;
+    text-align: center;
+    width: max-content;
+    padding: 5px 20px 5px 20px;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 3px;
+    background: #18A81E;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .menu-item:hover {
+        background: linear-gradient(to top, #EEEEEE 0%, #ffffff 100%);
+        color: #01944B;
+    }
+
+
+.labelStyle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.div-contact {
+    background-color: #E2A904;
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+}
+
+.button-hotline {
+    background: linear-gradient(to top, #01944B 0%, #06AC59 100%);
+    width: max-content;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px 5px 5px auto;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .button-hotline:hover {
+        background: linear-gradient(to top, #EEEEEE 0%, #ffffff 100%);
+        color: #01944B;
+    }
+
+.service a {
+    color: #5b7abb;
+    display: block;
+}
+
+.service h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #56ceba;
+    font-size: 1.3rem;
+    margin: 1rem 0 0.6rem;
+}
+
+.services-grid {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.service {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #e7e7e7;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+    .service:hover {
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .service i {
+        font-size: 3.45rem;
+        margin: 1rem 0;
+    }
+
+.service1 i,
+.service1 h4,
+.service1 .cta {
+    color: #42b7ca;
+}
+
+.service1:hover {
+    border: 2px solid #42b7ca;
+}
+
+.service2 i,
+.service2 h4,
+.service2 .cta {
+    color: #425fca;
+}
+
+.service2:hover {
+    border: 2px solid #425fca;
+}
+
+.service3 i,
+.service3 h4,
+.service3 .cta {
+    color: #9c42ca;
+}
+
+.service3:hover {
+    border: 2px solid #9c42ca;
+}
+
+.service .cta span {
+    font-size: 0.6rem;
+}
+
+.service > * {
+    flex: 1 1 100%;
+}
+
+.service .cta {
+    align-self: flex-end;
+}
+
+.divService {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.divContent {
+    width:80%;
+    margin:auto;
+}
+
+.tableNormal {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tdNormal {
+    width: 33.3%;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    border: 1px solid #267F31;
+}
+
+.divFooter {
+    width: 100%;
+    display: block;
+    background: linear-gradient(to bottom, #01944B 0%, #06AC59 100%);
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 20px 15% 20px 15%;
+}
+
+@media screen and (max-width: 900px) {
+    .tableNormal {
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .tdNormal {
+        width: 33.3%;
+        padding: 10px 10px 10px 10px;
+        text-align: center;
+        border: 1px solid #000000;
+        display: table-cell;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .div-contact {
+        width: 100%;
+        padding: 10px;
+    }
+    .thContact {
+        display: table-cell;
+        vertical-align: top;
+        padding: 10px;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .services-grid {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .divService {
+        width: 95%;
+        margin: auto;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .divContent {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .thContact {
+        display: block;
+        width: 100%;
+        vertical-align: top;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .divContent {
+        width: 100%;
+        margin: auto;
+        padding:10px;
+        box-sizing:border-box;
+    }
+}
